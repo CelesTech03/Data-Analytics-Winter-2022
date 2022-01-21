@@ -28,6 +28,7 @@ select max(price) from products where title not like '% Computer';
 select * from users;
 select * from users where email like '%gmail.com';
 select count(email) from users where email like'%gmail.com';
+select count(*) from users where email like'%gmail%';
 -- 5. Using the purchase_items table, find the total dollar value of
 --    all items with state "Returned".
 select * from purchase_items;
@@ -35,7 +36,7 @@ select sum(price) from purchase_items where status = 'Returned';
 -- 6. Find the average price of all products containing the word
 --    "Book" in their title.
 select * from products;
-select avg(price) from products where title like '%Book';
+select avg(price) from products where title ilike '% Book';
 ----------------------------------------
 -- EXTRA CREDIT: If you finish early. --
 ----------------------------------------
